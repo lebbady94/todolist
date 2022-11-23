@@ -1,0 +1,16 @@
+@mixin scroll-bar-custom {
+  &__list::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  &__list::-webkit-scrollbar-track {
+    background: $light-grey;
+    border-radius: $size-8;
+  }
+  
+  &__list::-webkit-scrollbar-thumb {
+    background-color: $dark-grey;
+    border-radius: $size-8;
+    border: $size-1 solid $light-grey;
+  }
+}

@@ -1,0 +1,10 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "../App.scss";
+
+// components
+@import "../components/Status/Status.scss";
+@import "../components/ListItem/ListItem.scss";
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');

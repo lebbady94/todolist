@@ -1,0 +1,14 @@
+.list-item {
+  margin: $size-5 0;
+
+  &__button {
+    background: $all-light-grey;
+    border: none;
+    border-radius: $size-3;
+    padding: $size-5;
+  }
+  
+  &__button--done {
+    text-decoration: line-through;
+  }
+}
