@@ -14,20 +14,20 @@ const App: React.FC = () => {
   const [isRefreshed, setIsRefreshed] = useState(true);
 
   useEffect(() => {
-    isRefreshed && getTodos().then((todos: ITodoRes[]) => setTodos(todos.map(todo => adaptTodoResToModel(todo))))
+    isRefreshed && getTodos().then((todos: ITodoRes[]) => setTodos(todos.map(todo => adaptTodoResToModel(todo)))).catch((error:Error) => error)
     setIsRefreshed(false);
   }, [isRefreshed]);
 
   const handleOnClickToogle = (todo: ITodo) => {
     editTodo(adaptTodoModelToRes({ ...todo, done: !todo.done })).then(() => {
       setIsRefreshed(true);
-    })
+    }).catch((error:Error) => error)
   };
 
   const handleOnClickCreate = () => {
     createTodo(adaptTodoModelToRes({id: nanoid(), value: value, done: false, createdAt: Date.now()})).then(() => {
       setIsRefreshed(true);
-    })
+    }).catch((error:Error) => error)
     setValue("");
   };
 
