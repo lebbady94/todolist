@@ -7,6 +7,7 @@ import { ITodoRes } from './core/services/todos/todos.service.types';
 import { adaptTodoModelToRes, adaptTodoResToModel } from './core/adapter/todos/todos.adapter';
 import { addDoneTodos } from './utils/functions';
 import ListItem from './components/ListItem/ListItem';
+import Header from './components/Header/Header';
 
 const App: React.FC = () => {
   const [value, setValue] = useState("");
@@ -33,6 +34,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
+      <Header title="My TODO list" />
       <Status status={addDoneTodos(todos)} />
       <input
         className="app__input"
